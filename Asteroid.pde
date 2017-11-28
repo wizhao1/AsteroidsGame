@@ -35,34 +35,39 @@ class Asteroid extends Floater
 	public void setPointDirection(int degrees){myPointDirection = degrees;};   
 	public double getPointDirection(){return myPointDirection;}; 
 
-	public void move ()   //move the floater in the current direction of travel
-  	{      
-	    //change the x and y coordinates by myDirectionX and myDirectionY       
-	    myCenterX += myDirectionX;    
-	    myCenterY += myDirectionY;     
+	// public void move ()   //move the floater in the current direction of travel
+ //  	{      
+	//     //change the x and y coordinates by myDirectionX and myDirectionY       
+	//     myCenterX += myDirectionX;    
+	//     myCenterY += myDirectionY;     
 
-	    //rotating asteroid
-		myPointDirection+=rotationSpeed;
-
-	    //wrap around screen    
-	    if(myCenterX >width)
-	    {     
-	      	myCenterX = 0;    
-	    }    
-	    else if (myCenterX<0)
-	    {     
-	      	myCenterX = width;    
-	    }    
-	    if(myCenterY >height)
-	    {    
-	      	myCenterY = 0;    
-	    } 
+	//     //rotating asteroid
+	// 	turn(rotationSpeed);
+	//     //wrap around screen    
+	//     if(myCenterX >width)
+	//     {     
+	//       	myCenterX = 0;    
+	//     }    
+	//     else if (myCenterX<0)
+	//     {     
+	//       	myCenterX = width;    
+	//     }    
+	//     if(myCenterY >height)
+	//     {    
+	//       	myCenterY = 0;    
+	//     } 
 	    
-	    else if (myCenterY < 0)
-	    {     
-	      	myCenterY = height;    
-	    }   
+	//     else if (myCenterY < 0)
+	//     {     
+	//       	myCenterY = height;    
+	//     }   
+ //  	}   
+public void move ()   //move the floater in the current direction of travel
+  	{      
+	  
+	    //rotating asteroid
+		turn(rotationSpeed);
+		super.move();
   	}   
-
 
 }
